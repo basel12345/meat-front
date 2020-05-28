@@ -1,0 +1,28 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div
+        [style.background-color]="loginPage ? '#f64c4c' : '#eff1f2'"
+        [style.color]="loginPage ? '#FFFF' : '#000000'"
+        (click)="login()"
+        id="first"
+        class="col-6 record"
+      >
+        تسجيل الدخول
+      </div>
+      <div
+        [style.background-color]="!loginPage ? '#f64c4c' : '#eff1f2'"
+        [style.color]="!loginPage ? '#FFFF' : '#000000'"
+        (click)="register()"
+        id="second"
+        class="col-6 record"
+      >
+        تسجيل حساب
+      </div>
+      <div class="col-sm-12 auth">
+        <login-root *ngIf="loginPage"></login-root>
+        <register-root *ngIf="!loginPage"></register-root>
+      </div>
+    </div>
+  </div>
+</body>

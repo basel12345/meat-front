@@ -1,0 +1,115 @@
+<body>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <h3>تعديل منتج</h3>
+    <div class="form-group">
+      <label>اسم المنتج</label>
+      <input
+        type="text"
+        placeholder="ادخل اسم المنتج"
+        class="form-control"
+        formControlName="name"
+        [style.border]="
+          f.name.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+      />
+      <span *ngIf="f.name.invalid && f.name.touched" class="alert-warnning">
+        يجب ادخال اسم المنتج
+      </span>
+    </div>
+    <div class="form-group">
+      <label>سعر المنتج</label>
+      <input
+        type="number"
+        placeholder="ادخل سعر المنتج"
+        class="form-control"
+        formControlName="price"
+        [style.border]="
+          f.price.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+      />
+      <span *ngIf="f.price.invalid && f.price.touched" class="alert-warnning">
+        يجب ادخال سعر المنتج
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>نوع المنتج</label>
+      <select
+        placeholder="ادخل نوع المنتج"
+        class="form-control"
+        formControlName="type"
+        [style.border]="
+          f.type.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+        ><option *ngFor="let res of Types" [value]="res.value">{{
+          res.value
+        }}</option></select
+      >
+      <span *ngIf="f.type.invalid && f.type.touched" class="alert-warnning">
+        يجب ادخال نوع المنتج
+      </span>
+    </div>
+    <div class="form-group" *ngIf="appearInput">
+      <label>نوع اللحمه</label>
+      <select
+        placeholder="ادخل نوع اللحمه"
+        class="form-control"
+        formControlName="meatType"
+        [style.border]="
+          f.meatType.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+        ><option *ngFor="let res of MeatType" [value]="res.value">{{
+          res.value
+        }}</option></select
+      >
+      <span
+        *ngIf="f.meatType.invalid && f.meatType.touched"
+        class="alert-warnning"
+      >
+        يجب ادخال نوع اللحمه
+      </span>
+    </div>
+    <div class="form-group">
+      <label>وزن المنتج</label>
+      <input
+        type="text"
+        placeholder="ادخل وزن المنتج"
+        class="form-control"
+        formControlName="weight"
+        [style.border]="
+          f.weight.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+      />
+      <span *ngIf="f.weight.invalid && f.weight.touched" class="alert-warnning">
+        يجب ادخال وزن المنتج
+      </span>
+    </div>
+    <div class="form-group">
+      <label>وصف المنتج</label>
+      <textarea
+        placeholder="ادخل وصف المنتج"
+        class="form-control"
+        formControlName="description"
+        [style.border]="
+          f.description.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+        "
+      ></textarea>
+      <span
+        *ngIf="f.description.invalid && f.description.touched"
+        class="alert-warnning"
+      >
+        يجب ادخال وصف المنتج
+      </span>
+    </div>
+    <button
+      type="submit"
+      [disabled]="productForm.invalid"
+      class="btn btn-primary"
+    >
+      اضافة
+    </button>
+    <button type="button" (click)="closed()" class="btn btn-danger">
+      اغلاق
+    </button>
+  </form>
+</body>

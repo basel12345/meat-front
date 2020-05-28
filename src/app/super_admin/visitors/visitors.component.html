@@ -1,0 +1,30 @@
+<body>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">الأسم</th>
+          <th scope="col">البريد الألكتروني</th>
+          <th scope="col">العنوان</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of AllUsers">
+          <th>{{ res.username }}</th>
+          <td>{{ res.email }}</td>
+          <td>{{ res.address }}</td>
+          <td>
+            <button
+              (click)="delete(res._id)"
+              type="button"
+              class="btn btn-danger"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

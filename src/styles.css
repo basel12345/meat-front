@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+.loading {
+  margin: 12% 47%;
+}
+
+.loading img {
+  background-color: white;
+  -webkit-animation: loading 0.3s infinite; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: loading 0.3s infinite; /* Firefox < 16 */
+  -ms-animation: loading 0.3s infinite; /* Internet Explorer */
+  -o-animation: loading 0.3s infinite; /* Opera < 12.1 */
+  animation: loading 0.3s infinite;
+
+  @-ms-keyframes loading {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    70% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@-moz-keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

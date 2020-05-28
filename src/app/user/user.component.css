@@ -1,0 +1,24 @@
+span {
+  z-index: 1111;
+  font-size: 32px;
+  position: fixed;
+  color: gray;
+  bottom: 44%;
+  left: 96%;
+  background: white;
+  padding: 6px 11px;
+  border-radius: 50%;
+}
+span:hover {
+  cursor: pointer;
+  color: rgb(245, 76, 76);
+  -moz-transform: scale(1.5) rotate(360deg);
+  -webkit-transform: scale(1.5) rotate(360deg);
+  -o-transform: scale(1.5) rotate(360deg);
+  -ms-transform: scale(1.5) rotate(360deg);
+  transform: scale(1.5) rotate(360deg);
+  -moz-transition: transform 0.2s ease-in-out 0.2s;
+  -webkit-transition: transform 0.2s ease-in-out 0.2s;
+  -o-transition: transform 0.2s ease-in-out 0.2s;
+  -ms-transition: transform 0.2s ease-in-out 0.2s;
+}

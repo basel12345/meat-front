@@ -1,0 +1,285 @@
+* {
+  direction: rtl;
+}
+
+body {
+  background-color: rgb(248, 249, 250);
+  direction: rtl;
+  perspective: 600px;
+  overflow-y: hidden;
+}
+
+.firstImage {
+  width: 426px;
+  float: right;
+}
+
+.contetnt {
+  padding: 89px 0;
+  margin-bottom: 54px;
+}
+
+.firstText {
+  padding-top: 82px;
+}
+
+.firstText h3,
+.firstText span {
+  float: right;
+}
+
+span {
+  text-align: right;
+  line-height: 1.7;
+}
+
+h3 {
+  text-align: right;
+  margin-bottom: 31px;
+}
+
+.markets h3::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  border-top: 2.3px solid rgb(239, 241, 242);
+  z-index: 1;
+}
+
+.theme {
+  background-color: white;
+  margin: auto;
+  margin-top: 26px;
+  text-align: center;
+  max-width: 23%;
+  border-radius: 20px;
+  padding: 50px 0 22px 0;
+  box-shadow: 7px 16px 11px rgb(239, 241, 242);
+  margin-bottom: 121px;
+}
+
+.theme:hover {
+  cursor: pointer;
+  transform: translate3d(10px, -15px, 20px);
+}
+
+.product img {
+  width: 134px;
+  margin-bottom: 43px;
+}
+
+.theme span {
+  font-weight: 600;
+}
+
+.theme span::before {
+  content: " ";
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  right: 17px;
+  height: 0.5em;
+  border-top: 2.3px solid rgb(239, 241, 242);
+  z-index: 1;
+  width: 88%;
+}
+
+.logo img {
+  width: none;
+  margin-bottom: none;
+}
+
+.logo img,
+.seller {
+  margin-top: 7px;
+}
+
+.info {
+  background-color: white;
+  border-radius: 50%;
+  padding-top: 90px;
+  padding-bottom: 70px;
+  padding-right: 29px;
+}
+
+.info img {
+  width: 779px;
+  float: right;
+  position: absolute;
+  right: -386px;
+  bottom: -106px;
+  z-index: -1;
+}
+
+.infoImage img {
+  width: 123px;
+  position: initial;
+  margin-right: 46px;
+}
+
+.question {
+  margin-right: 268px;
+  margin-top: 44px;
+  text-align: start;
+}
+
+.question span {
+  margin-top: 43px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .imageMarket {
+    text-align: center;
+  }
+
+  .imageMarket .firstImage {
+    float: none;
+  }
+
+  .theme span::before {
+    right: 8px;
+  }
+
+  .info {
+    padding-top: 60px;
+    padding-bottom: 37px;
+  }
+
+  .info img {
+    width: 654px;
+  }
+
+  .infoImage img {
+    width: 100px;
+    margin-right: 12px;
+  }
+
+  .question {
+    margin-right: 207px;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .imageMarket {
+    text-align: center;
+  }
+
+  .imageMarket .firstImage {
+    float: none;
+  }
+
+  .product img {
+    width: 105px;
+  }
+
+  .theme span::before {
+    right: 8px;
+  }
+
+  .info {
+    padding-top: 70px;
+    padding-bottom: 41px;
+    padding-left: 148px;
+  }
+
+  .info img {
+    width: 654px;
+  }
+
+  .infoImage img {
+    width: 100px;
+    margin-right: 12px;
+  }
+
+  .question {
+    margin-right: 119px;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 575px) {
+  .imageMarket {
+    text-align: center;
+  }
+
+  .imageMarket .firstImage {
+    float: none;
+  }
+
+  .product img {
+    width: 105px;
+  }
+
+  .theme span::before {
+    right: 8px;
+  }
+
+  .info {
+    width: 0;
+    padding-top: 70px;
+    padding-bottom: 10px;
+    padding-left: 209px;
+  }
+
+  .info img {
+    width: 728px;
+  }
+
+  .infoImage img {
+    width: 179px;
+    margin-right: 0;
+  }
+
+  .question {
+    margin-right: 29px;
+    margin-top: 71px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .imageMarket {
+    text-align: center;
+  }
+
+  .imageMarket .firstImage {
+    float: none;
+    width: 349px;
+  }
+
+  .product img {
+    width: 69px;
+  }
+
+  .theme span {
+    font-size: 12px;
+  }
+
+  .theme span::before {
+    right: 8px;
+  }
+
+  .info {
+    width: 0;
+    padding-top: 70px;
+    padding-bottom: 10px;
+    padding-left: 209px;
+  }
+
+  .info img {
+    width: 728px;
+  }
+
+  .infoImage img {
+    width: 179px;
+    margin-right: 0;
+  }
+
+  .question {
+    margin-right: 29px;
+    margin-top: 71px;
+  }
+}

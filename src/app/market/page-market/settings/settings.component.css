@@ -1,0 +1,58 @@
+body {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.buttons {
+  position: relative;
+  background-color: rgb(248, 249, 250);
+  direction: rtl;
+  perspective: 600px;
+  text-align: right;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 25%;
+  margin: 140px auto;
+  padding: 31px;
+  border-radius: 60px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 31px;
+  font-size: 20px;
+}
+
+.btn-danger {
+  float: left;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 51px;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  top: 82px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 0.5em;
+  border-top: 2.3px solid rgb(239, 241, 242);
+  z-index: 1;
+}
+
+@media only screen and (max-width: 1500px) {
+  .buttons {
+    width: 80%;
+  }
+}

@@ -1,0 +1,37 @@
+.log {
+  margin: 0 auto;
+  cursor: pointer;
+  background: rgb(246, 76, 76);
+  color: white;
+  padding: 10px 11px 13px 11px;
+  border-radius: 15px;
+  transition: 0.5s ease-in-out;
+}
+
+.log:hover {
+  background: white;
+  color: rgb(246, 76, 76);
+}
+
+nav {
+  background-color: white !important;
+  box-shadow: 0 7px rgb(239, 241, 242) !important;
+}
+
+img {
+  width: 71px;
+}
+
+a {
+  margin: auto;
+}
+
+@media only screen and (max-width: 991px) {
+  nav {
+    text-align: center;
+  }
+
+  li a {
+    margin: auto;
+  }
+}

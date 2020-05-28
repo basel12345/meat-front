@@ -1,0 +1,48 @@
+<body>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">اسم المنتج</th>
+          <th scope="col">نوع المنتج</th>
+          <th scope="col">السعر</th>
+          <th scope="col">الوزن</th>
+          <th scope="col">المتجر</th>
+          <th scope="col">وصف المنتج</th>
+          <th scope="col">صورة المنتج</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of AllProduct">
+          <th>{{ res.name }}</th>
+          <td>{{ res.type }}</td>
+          <td>{{ res.price }}</td>
+          <td>{{ res.weight }}</td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.market[0].logo"
+              alt="المتجر"
+            />
+          </td>
+          <td>{{ res.description }}</td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.image"
+              alt="صورة المنتج"
+            />
+          </td>
+          <td>
+            <button
+              (click)="delete(res._id)"
+              type="button"
+              class="btn btn-danger"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

@@ -1,0 +1,51 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>البريد الألكتروني</label>
+    <input
+      type="email"
+      placeholder="ادخل البريد الألكتروني"
+      class="form-control"
+      formControlName="email"
+      [style.border]="
+        f.email.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.email.invalid && f.email.touched && !f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني
+    </span>
+    <span
+      *ngIf="f.email.invalid && f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني بالصيغه المعروفه
+    </span>
+  </div>
+  <div class="form-group">
+    <label>كلمة السر</label>
+    <input
+      type="password"
+      placeholder="ادخل كلمة السر هنا"
+      class="form-control"
+      formControlName="password"
+      [style.border]="
+        f.password.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.password.invalid && f.password.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال كلمة السر
+    </span>
+  </div>
+  <button
+    [disabled]="loginForm.invalid"
+    type="submit"
+    class="btn btn-lg btn-block"
+  >
+    تسجيل دخول
+  </button>
+</form>

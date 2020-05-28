@@ -1,0 +1,81 @@
+body {
+  background-color: rgb(248, 249, 250);
+  direction: rtl;
+  perspective: 600px;
+  text-align: right;
+  overflow-y: hidden;
+}
+
+.container {
+  background-color: white;
+  margin: 76px auto;
+  padding: 66px;
+  border-radius: 24px;
+}
+
+img {
+  margin-right: 91px;
+  margin-top: 109px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+.count,
+h6 {
+  margin-top: 98px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.counter {
+  border: 2px solid rgb(248, 249, 250);
+  background: transparent;
+  color: rgb(196, 200, 203);
+  font-size: 21px;
+  border-radius: 47%;
+  padding: 5px 12px;
+  margin: 0;
+}
+
+span {
+  padding: 9px 34px 3px;
+}
+
+span::after {
+  top: 43px;
+}
+
+span::before {
+  top: 0;
+}
+
+span::after,
+span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 35px;
+  height: 0.5em;
+  border-top: 2px solid rgb(239, 241, 242);
+  z-index: 1;
+  width: 34%;
+}
+
+.add {
+  background-color: rgb(245, 76, 76);
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 15px 83px;
+  margin-top: 81px;
+  margin-right: 65px;
+  border-radius: 20px;
+}
+
+.fa-cart-plus {
+  padding-left: 10px;
+}

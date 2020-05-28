@@ -1,0 +1,43 @@
+.images {
+  margin-right: 92px;
+  margin-top: 15px;
+  padding: 13px 0 11px 0;
+  border-radius: 15px;
+  box-shadow: 1px 7px 19px 0px rgb(239, 241, 242);
+  text-align: center;
+}
+
+.images:nth-of-type(2) {
+  margin-right: 10px;
+}
+
+.images:hover,
+.active {
+  background-color: rgb(234, 237, 238);
+  cursor: pointer;
+}
+
+img {
+  height: 51px;
+  width: 36px;
+}
+
+span {
+  display: block;
+  margin-top: 13px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+span::after {
+  content: "";
+  position: absolute;
+  top: 76px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 0.5em;
+  border-top: 1.3px solid rgb(239, 241, 242);
+  width: 100%;
+}

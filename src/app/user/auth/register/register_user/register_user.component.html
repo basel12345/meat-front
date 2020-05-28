@@ -1,0 +1,110 @@
+<form [formGroup]="registerUserForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>اسم المستخدم</label>
+    <input
+      type="text"
+      placeholder="ادخل اسم المستخدم"
+      class="form-control"
+      formControlName="username"
+      [style.border]="
+        f.username.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.username.invalid && f.username.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال اسم المستخدم
+    </span>
+  </div>
+  <div class="form-group">
+    <label>البريد الألكتروني</label>
+    <input
+      type="email"
+      placeholder="ادخل البريد الألكتروني"
+      class="form-control"
+      formControlName="email"
+      [style.border]="
+        f.email.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.email.invalid && f.email.touched && !f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني
+    </span>
+    <span
+      *ngIf="f.email.invalid && f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني بالصيغه المعروفه
+    </span>
+  </div>
+  <div class="form-group">
+    <label>كلمة السر</label>
+    <input
+      type="password"
+      placeholder="ادخل كلمة السر هنا"
+      class="form-control"
+      formControlName="password"
+      [style.border]="
+        f.password.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.password.invalid && f.password.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال كلمة السر
+    </span>
+  </div>
+  <div class="form-group">
+    <label> تأكيد كلمة السر </label>
+    <input
+      type="password"
+      placeholder="ادخل كلمة تأكيد السر هنا"
+      class="form-control"
+      formControlName="confirmPassword"
+      [style.border]="
+        f.confirmPassword.invalid
+          ? '1.5px solid #f64c4c'
+          : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.confirmPassword.invalid && f.confirmPassword.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال تأكيد كلمة السر
+    </span>
+    <span
+      *ngIf="f.confirmPassword.value !== f.password.value"
+      class="alert-warnning"
+    >
+      يجب ادخال كلمة السر متطابقه
+    </span>
+  </div>
+  <div class="form-group">
+    <label>العنوان</label>
+    <input
+      type="text"
+      placeholder="العنوان"
+      class="form-control"
+      formControlName="address"
+      [style.border]="
+        f.address.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span *ngIf="f.address.invalid && f.address.touched" class="alert-warnning">
+      يجب ادخال العنوان
+    </span>
+  </div>
+  <button
+    [disabled]="registerUserForm.invalid"
+    type="submit"
+    class="btn btn-lg btn-block"
+  >
+    تسجيل دخول
+  </button>
+</form>

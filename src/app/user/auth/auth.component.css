@@ -1,0 +1,42 @@
+* {
+  direction: rtl;
+}
+
+body {
+  background-color: rgb(248, 249, 250);
+  direction: rtl;
+  perspective: 600px;
+  text-align: right;
+  overflow-y: hidden;
+}
+
+.container {
+  margin: 139px auto;
+  max-width: 357px !important;
+}
+
+.record {
+  text-align: center;
+  background-color: #eff1f2;
+  padding: 17px;
+}
+
+.record:hover,
+.record:active {
+  background-color: #f64c4c !important;
+  cursor: pointer;
+  color: white !important;
+}
+
+#second {
+  border-top-left-radius: 18px;
+}
+
+#first {
+  border-top-right-radius: 18px;
+}
+
+.auth {
+  background-color: white;
+  padding: 0;
+}

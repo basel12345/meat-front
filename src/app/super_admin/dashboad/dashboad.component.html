@@ -1,0 +1,36 @@
+<body>
+  <div class="container">
+    <div class="row products">
+      <div class="col-sm-6">
+        <ngx-charts-pie-chart
+          [view]="viewUsers"
+          [scheme]="colorSchemeUser"
+          [results]="users"
+          [gradient]="gradientUser"
+          [legend]="gradientUser"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+        >
+        </ngx-charts-pie-chart>
+      </div>
+      <div class="col-sm-6">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </div>
+</body>

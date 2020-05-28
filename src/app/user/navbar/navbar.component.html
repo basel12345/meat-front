@@ -1,0 +1,89 @@
+<nav class="navbar navbar-light bg-light">
+  <a *ngIf="token" (click)="logOut()" class="navbar-brand log">تسجيل خروج</a>
+  <a class="log" *ngIf="!token" (click)="logIn()" class="navbar-brand log"
+    >تسجيل دخول</a
+  >
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a routerLink="/user/home">
+      <img [src]="logo" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a
+            routerLinkActive="active"
+            routerLink="/user/markets"
+            class="nav-link"
+            >المتاجر</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" routerLink="/user/meats" class="nav-link"
+            >اللحوم</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLinkActive="active"
+            routerLink="/user/chickens"
+            class="nav-link"
+            >الدواجن</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLinkActive="active"
+            routerLink="/user/admirals"
+            class="nav-link"
+            >البحريات</a
+          >
+        </li>
+        <a *ngIf="role == 2" class="profile" routerLink="/market/page-market"
+          ><i class="fas fa-user-alt"></i
+        ></a>
+        <a *ngIf="role == 1" class="profile" routerLink="/super_admin/dashboad"
+          ><i class="fas fa-user-alt"></i
+        ></a>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="عن ماذا تبحث ؟"
+          (keyup)="Search($event)"
+        />
+        <button class="search" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+        <ng-container *ngIf="response">
+          <div class="result">
+            <div *ngFor="let res of products">
+              <div (click)="product(res._id)">
+                {{ res.name }}
+              </div>
+            </div>
+            <div *ngFor="let res of market">
+              <div (click)="markets(res._id)">
+                {{ res.username }}
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </form>
+    </div>
+  </div>
+</nav>

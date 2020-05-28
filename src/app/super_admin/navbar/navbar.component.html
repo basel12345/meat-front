@@ -1,0 +1,61 @@
+<nav class="navbar navbar-light bg-light">
+  <a *ngIf="token" (click)="logOut()" class="navbar-brand log">تسجيل خروج</a>
+  <a class="log" *ngIf="!token" (click)="logIn()" class="navbar-brand log"
+    >تسجيل دخول</a
+  >
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a routerLink="/user/home">
+      <img [src]="logo" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a
+            routerLinkActive="active"
+            routerLink="/super_admin/dashboard"
+            class="nav-link"
+            >dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLinkActive="active"
+            routerLink="/super_admin/products"
+            class="nav-link"
+            >المنتاجات</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLinkActive="active"
+            routerLink="/super_admin/markets"
+            class="nav-link"
+            >المتاجر</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLinkActive="active"
+            routerLink="/super_admin/visitors"
+            class="nav-link"
+            >الزائرين</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

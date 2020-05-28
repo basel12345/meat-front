@@ -1,0 +1,18 @@
+<div class="row">
+  <div (click)="registerUsers()" [class.active]="user" class="col-3 images">
+    <img [src]="registerUser" [alt]="registerUser" />
+    <span>مستخدم</span>
+  </div>
+  <div (click)="registerMarkets()" [class.active]="!user" class="col-3 images">
+    <img [src]="registeMarket" [alt]="registeMarket" />
+    <span>متجر</span>
+  </div>
+  <div class="col-sm-12">
+    <ng-container *ngIf="user">
+      <register-user></register-user>
+    </ng-container>
+    <ng-container *ngIf="!user">
+      <register-market></register-market>
+    </ng-container>
+  </div>
+</div>

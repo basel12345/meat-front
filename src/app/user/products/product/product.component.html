@@ -1,0 +1,38 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img
+          [src]="'https://meat-market.herokuapp.com/' + Product.image"
+          [alt]="Product.image"
+        />
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2>{{ Product.name }}</h2>
+          </div>
+          <div class="col-sm-12" style="font-size: 19px; font-weight: 600;">
+            {{ Product.price }} Eg
+          </div>
+          <div class="col-sm-12">
+            <p>{{ Product.description }}</p>
+          </div>
+          <div class="col-sm-4">
+            <h6>الكميه المطلوبه</h6>
+          </div>
+          <div class="col-sm-8 count">
+            <button class="counter" (click)="counter('increas')">+</button>
+            <span>{{ numbers }}</span>
+            <button class="counter" (click)="counter('decreas')">-</button>
+          </div>
+          <div class="col-sm-12">
+            <button class="add" (click)="submit()">
+              <i class="fas fa-cart-plus"></i>اضافة للعربه
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

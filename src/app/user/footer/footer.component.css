@@ -1,0 +1,49 @@
+* {
+  direction: rtl;
+}
+
+img {
+  float: right;
+  width: 71px;
+  margin: 30px 0;
+}
+
+a {
+  margin-left: 107px;
+  font-weight: 500;
+  color: #000000 !important;
+}
+
+a.active,
+a:hover {
+  color: rgb(246, 76, 76) !important;
+  text-decoration: none;
+}
+
+.pages,
+.icons {
+  margin: 59px 0 30px 0;
+}
+
+.fab {
+  color: rgb(246, 76, 76);
+  margin-left: 8px;
+  font-size: 19px;
+}
+
+.copyRight {
+  text-align: center;
+  padding: 13px 0;
+}
+
+.copyRight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 0.5em;
+  border-top: 1.3px solid rgb(239, 241, 242);
+  z-index: 1;
+}

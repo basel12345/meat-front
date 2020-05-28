@@ -1,0 +1,164 @@
+form {
+  padding-top: 33px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.alert-warnning {
+  color: #cd081a;
+  margin-right: 42px;
+  margin-top: 8px;
+  font-size: 14px;
+  display: block;
+  -webkit-animation: fadein 2s ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s ease-in-out; /* Firefox < 16 */
+  -ms-animation: fadein 2s ease-in-out; /* Internet Explorer */
+  -o-animation: fadein 2s ease-in-out; /* Opera < 12.1 */
+  animation: fadein 1s ease-in-out;
+  position: absolute;
+  top: 70px;
+}
+
+@keyframes fadein {
+  0% {
+    top: 0;
+    z-index: -1;
+  }
+  0% {
+    top: 39px;
+    z-index: -1;
+  }
+  100% {
+    top: 70px;
+    z-index: 0;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  0% {
+    top: 0;
+    z-index: -1;
+  }
+  0% {
+    top: 39px;
+    z-index: -1;
+  }
+  100% {
+    top: 70px;
+    z-index: 0;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  0% {
+    top: 0;
+    z-index: -1;
+  }
+  0% {
+    top: 39px;
+    z-index: -1;
+  }
+  100% {
+    top: 70px;
+    z-index: 0;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  0% {
+    top: 0;
+    z-index: -1;
+  }
+  0% {
+    top: 39px;
+    z-index: -1;
+  }
+  100% {
+    top: 70px;
+    z-index: 0;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  0% {
+    top: 0;
+    z-index: -1;
+  }
+  0% {
+    top: 39px;
+    z-index: -1;
+  }
+  100% {
+    top: 70px;
+    z-index: 0;
+  }
+}
+
+button,
+button:hover {
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: #f64c4c;
+  border: #f64c4c;
+  color: white;
+  font-size: 18px;
+  padding-bottom: 17px;
+  padding-top: 12px;
+  margin-top: 37px;
+}
+
+input,
+label,
+select,
+textarea {
+  margin-right: 26px;
+}
+
+input,
+select,
+option,
+textarea {
+  width: 85%;
+  border-radius: 20px;
+}
+
+input::placeholder {
+  font-size: 14px;
+  color: #b3b6b7;
+  font-weight: bolder;
+}
+
+input[type="file"] {
+  position: relative;
+  padding: 13px 0px 33px 0;
+}
+
+input[type="file"]:hover {
+  cursor: pointer;
+}
+
+input[type="file"]::after {
+  content: "رفع الملف";
+  position: absolute;
+  background-color: rgb(255, 219, 219);
+  color: black;
+  z-index: 1;
+  font-size: 12px;
+  right: 196px;
+  bottom: 6px;
+  padding: 8px 23px;
+  border: 1px solid rgb(255, 200, 200);
+  border-radius: 19px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  z-index: -1;
+  display: none;
+}

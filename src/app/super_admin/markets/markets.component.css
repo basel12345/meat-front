@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(248, 249, 250);
+  direction: rtl;
+  perspective: 600px;
+  text-align: right;
+  overflow-y: hidden;
+}
+
+table {
+  margin: 38px 0;
+}
+
+img {
+  width: 60px;
+}

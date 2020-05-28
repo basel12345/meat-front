@@ -1,0 +1,277 @@
+<form [hidden]="!stepOne" [formGroup]="firstStepForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>اسم المتجر</label>
+    <input
+      type="text"
+      placeholder="ادخل اسم المستخدم"
+      class="form-control"
+      formControlName="name"
+      [style.border]="
+        f.name.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span *ngIf="f.name.invalid && f.name.touched" class="alert-warnning">
+      يجب ادخال اسم المتجر
+    </span>
+  </div>
+  <div class="form-group">
+    <label>البريد الألكتروني</label>
+    <input
+      type="email"
+      placeholder="ادخل البريد الألكتروني"
+      class="form-control"
+      formControlName="email"
+      [style.border]="
+        f.email.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.email.invalid && f.email.touched && !f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني
+    </span>
+    <span
+      *ngIf="f.email.invalid && f.email.errors.pattern"
+      class="alert-warnning"
+    >
+      يجب ادخال البريد الألكتروني بالصيغه المعروفه
+    </span>
+  </div>
+  <div class="form-group">
+    <label>كلمة السر</label>
+    <input
+      type="password"
+      placeholder="ادخل كلمة السر هنا"
+      class="form-control"
+      formControlName="password"
+      [style.border]="
+        f.password.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.password.invalid && f.password.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال كلمة السر
+    </span>
+  </div>
+  <div class="form-group">
+    <label> تأكيد كلمة السر </label>
+    <input
+      type="password"
+      placeholder="ادخل كلمة تأكيد السر هنا"
+      class="form-control"
+      formControlName="confirmPassword"
+      [style.border]="
+        f.confirmPassword.invalid
+          ? '1.5px solid #f64c4c'
+          : '1.5px solid #49d268'
+      "
+    />
+    <span
+      *ngIf="f.confirmPassword.invalid && f.confirmPassword.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال تأكيد كلمة السر
+    </span>
+    <span
+      *ngIf="f.confirmPassword.value !== f.password.value"
+      class="alert-warnning"
+    >
+      يجب ادخال كلمة السر متطابقه
+    </span>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>رقم الحساب</label>
+        <input
+          type="number"
+          placeholder="رقم الحساب"
+          class="form-control"
+          formControlName="accountNumber"
+          [style.border]="
+            f.accountNumber.invalid
+              ? '1.5px solid #f64c4c'
+              : '1.5px solid #49d268'
+          "
+        />
+        <span
+          *ngIf="f.accountNumber.invalid && f.accountNumber.touched"
+          class="alert-warnning"
+        >
+          يجب ادخال رقم الحساب
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-6" style="padding-right: 0;">
+      <div class="form-group">
+        <label>IBAN</label>
+        <input
+          style="margin-right: 0;"
+          type="number"
+          placeholder="رقم الايبان"
+          class="form-control"
+          formControlName="iban"
+          [style.border]="
+            f.iban.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+          "
+        />
+        <span *ngIf="f.iban.invalid && f.iban.touched" class="alert-warnning">
+          يجب ادخال رقم الايبان
+        </span>
+      </div>
+    </div>
+  </div>
+  <button
+    [disabled]="firstStepForm.invalid"
+    type="submit"
+    class="btn btn-lg btn-block"
+  >
+    استكمال تسجيل المتجر
+  </button>
+</form>
+<form [hidden]="stepOne" [formGroup]="secondStepForm" (ngSubmit)="submit2()">
+  <div class="form-group">
+    <label>بطاقة احوال المالك</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="statusCard"
+      (change)="statusCardChange($event)"
+      class="form-control"
+      [style.border]="
+        f2.statusCard.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+      placeholder="بطاقة احوال المالك"
+    />
+    <span
+      *ngIf="f2.statusCard.invalid && f2.statusCard.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال بطاقة احوال المالك
+    </span>
+  </div>
+  <div class="form-group">
+    <label>السجل التجاري</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="commercialRegister"
+      class="form-control"
+      [style.border]="
+        f2.commercialRegister.invalid
+          ? '1.5px solid #f64c4c'
+          : '1.5px solid #49d268'
+      "
+      placeholder="السجل التجاري"
+      (change)="commercialRegisterChange($event)"
+    />
+    <span
+      *ngIf="f2.commercialRegister.invalid && f2.commercialRegister.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال السجل التجاري
+    </span>
+  </div>
+  <div class="form-group">
+    <label>الشهاده الضريبيه</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="taxCertificate"
+      class="form-control"
+      (change)="taxCertificateChange($event)"
+      [style.border]="
+        f2.taxCertificate.invalid
+          ? '1.5px solid #f64c4c'
+          : '1.5px solid #49d268'
+      "
+      placeholder="الشهاده الضريبيه"
+    />
+    <span
+      *ngIf="f2.taxCertificate.invalid && f2.taxCertificate.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال الشهاده الضريبيه
+    </span>
+  </div>
+  <div class="form-group">
+    <label>منيو أسعار الصرف</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="menu"
+      class="form-control"
+      (change)="menuChange($event)"
+      [style.border]="
+        f2.menu.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+      placeholder="منيو أسعار الصرف"
+    />
+    <span *ngIf="f2.menu.invalid && f2.menu.touched" class="alert-warnning">
+      يجب ادخال منيو أسعار الصرف
+    </span>
+  </div>
+  <div class="form-group">
+    <label>لوجو المتجر</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="logo"
+      class="form-control"
+      (change)="logoChange($event)"
+      [style.border]="
+        f2.logo.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+      placeholder="لوجو المتجر"
+    />
+    <span *ngIf="f2.logo.invalid && f2.logo.touched" class="alert-warnning">
+      يجب ادخال لوجو المتجر
+    </span>
+  </div>
+  <div class="form-group">
+    <label>كفر المتجر</label>
+    <input
+      type="file"
+      name="photo"
+      formControlName="cover"
+      class="form-control"
+      (change)="coverChange($event)"
+      [style.border]="
+        f2.cover.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+      placeholder="كفر المتجر"
+    />
+    <span *ngIf="f2.cover.invalid && f2.cover.touched" class="alert-warnning">
+      يجب ادخال كفر المتجر
+    </span>
+  </div>
+  <div class="form-group">
+    <label>وصف المتجر</label>
+    <input
+      type="text"
+      name="photo"
+      formControlName="description"
+      class="form-control"
+      [style.border]="
+        f2.description.invalid ? '1.5px solid #f64c4c' : '1.5px solid #49d268'
+      "
+      placeholder="وصف المتجر"
+    />
+    <span
+      *ngIf="f2.description.invalid && f2.description.touched"
+      class="alert-warnning"
+    >
+      يجب ادخال وصف المتجر
+    </span>
+  </div>
+  <button
+    [disabled]="secondStepForm.invalid"
+    type="submit"
+    class="btn btn-lg btn-block"
+  >
+    تم
+  </button>
+</form>

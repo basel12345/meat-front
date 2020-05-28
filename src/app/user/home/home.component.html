@@ -1,0 +1,80 @@
+<body>
+  <div class="container">
+    <div class="row contetnt">
+      <div class="col-lg-6 col-sm-12 imageMarket">
+        <img class="firstImage" [src]="firstImage" alt="firstImage" />
+      </div>
+      <div class="col-lg-6 col-sm-12 firstText">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>اللحوم الأكثر جوده من متجر اللحوم</h3>
+          </div>
+          <div class="col-sm-12">
+            <span
+              >هناك حقيقة مثبته منذ زمن طويل وهي ان المحتوى المقروء، لصفحة ما
+              سيلهي القارئ عن التركيز. على الشكل الخارجي للنص او شكل توضع
+              اللفقراتفي الصفحة التي يقرأها</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 markets">
+        <h3>متاجر مميزه</h3>
+      </div>
+      <div *ngFor="let res of specialMarkets" class="col-sm-3 theme">
+        <div class="row">
+          <div class="col-sm-12 product">
+            <img [src]="res.image" alt="{{ res.image }}" />
+          </div>
+          <div class="col-sm-12">
+            <span>{{ res.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 markets">
+        <h3>متاجر مميزه</h3>
+      </div>
+      <div *ngFor="let res of specialProduct" class="col-sm-3 theme">
+        <div class="row">
+          <div class="col-sm-12 product">
+            <img [src]="res.image" alt="{{ res.image }}" />
+          </div>
+          <div class="col-sm-12">
+            <span>{{ res.name }}</span>
+          </div>
+          <div class="col-sm-6 seller">
+            البائع
+          </div>
+          <div class="col-sm-6 logo">
+            <img [src]="res.seller" alt="{{ res.seller }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-bottom: 64px;">
+      <div class="col-sm-3 info">
+        <img [src]="background" [alt]="background" />
+        <div class="infoImage">
+          <img [src]="logoCar" [alt]="logoCar" />
+        </div>
+      </div>
+      <div class="col-sm-5 question">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>لماذا متجر اللحوم؟</h3>
+          </div>
+          <div class="col-sm-12">
+            <span
+              >متجر اللحوم يقدم افخم انواع اللحوم والاكلات البحريه والدواجن
+              واكثرها جزده ومتطابقة للشروط والاحكام</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

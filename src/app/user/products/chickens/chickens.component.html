@@ -1,0 +1,55 @@
+<body></body>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 search">
+        <h3>عرض النتائج</h3>
+        <div class="row check">
+          <div class="col-sm-12">
+            <input
+              type="checkbox"
+              class="regular-checkbox"
+              [(ngModel)]="alphabet"
+            />
+            <label>ابجدي</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="row" style="margin: 0;" [@fade]>
+          <div class="col-sm-12">
+            <h3>منتاجات مميزه</h3>
+          </div>
+          <div
+            *ngFor="let res of product"
+            class="col-xl-3 col-md-4 col-sm-12 theme"
+            (click)="products(res._id)"
+          >
+            <div class="row">
+              <div class="col-sm-12 product">
+                <img
+                  [src]="'https://meat-market.herokuapp.com/' + res.image"
+                  alt="{{ res.image }}"
+                />
+              </div>
+              <div class="col-sm-12">
+                <span>{{ res.name }}</span>
+              </div>
+              <div class="col-sm-6 seller">
+                البائع
+              </div>
+              <div class="col-sm-6 logo">
+                <img
+                  [src]="
+                    'https://meat-market.herokuapp.com/' + res.market[0]['logo']
+                  "
+                  alt="{{ res.market[0]['logo'] }}"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

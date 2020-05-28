@@ -1,0 +1,53 @@
+<body>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">اسم المتجر</th>
+          <th scope="col">البريد الألكتروني</th>
+          <th scope="col">IBAN</th>
+          <th scope="col">تسجيل تجاري</th>
+          <th scope="col">رقم الحساب</th>
+          <th scope="col">لوجو</th>
+          <th scope="col">قائمة طعام</th>
+          <th scope="col">بطاقة الملاك</th>
+          <th scope="col">شهادة الضرائب</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of AllMarkets">
+          <th>{{ res.username }}</th>
+          <td>{{ res.email }}</td>
+          <td>{{ res.IBAN }}</td>
+          <td>{{ res.commercialRegister }}</td>
+          <td>{{ res.numberAccount }}</td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.logo"
+              alt="لوجو"
+            />
+          </td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.menu"
+              alt="قائمة طعام"
+            />
+          </td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.ownersCard"
+              alt="بطاقة الملاك"
+            />
+          </td>
+          <td>
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + res.taxCertificate"
+              alt="شهادة الضرائب"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

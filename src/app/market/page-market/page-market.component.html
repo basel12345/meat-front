@@ -1,0 +1,88 @@
+<body>
+  <div class="row images">
+    <div class="cover col-sm-12">
+      <img
+        [src]="'https://meat-market.herokuapp.com/' + Market.cover"
+        [alt]="Market.cover"
+      />
+    </div>
+    <div class="container">
+      <div class="profile col-sm-12">
+        <div class="row">
+          <div class="col-2">
+            <img
+              [src]="'https://meat-market.herokuapp.com/' + Market.logo"
+              [alt]="Market.logo"
+            />
+          </div>
+          <div class="col-8 name">
+            <h2>{{ Market.username }}</h2>
+            <span>{{ Market.email }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <span>{{ Market.description }} </span>
+        <button type="button" (click)="popUp()" class="btn btn-primary">
+          اضافة منتج
+        </button>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div
+            *ngFor="let res of Market.product"
+            (click)="setting(res._id)"
+            class="col-xl-3 col-md-4 col-sm-12 theme"
+          >
+            <div class="row">
+              <div class="col-sm-12 product">
+                <img
+                  [src]="'https://meat-market.herokuapp.com/' + res.image"
+                  alt="{{ res.image }}"
+                />
+              </div>
+              <div class="col-sm-12">
+                <span>{{ res.name }}</span>
+              </div>
+              <div class="col-6 seller">
+                البائع
+              </div>
+              <div class="col-6 logo">
+                <img
+                  [src]="'https://meat-market.herokuapp.com/' + Market.logo"
+                  alt="{{ Market.logo }}"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<product-root
+  [@toggle-pop]
+  [MarketId]="Market._id"
+  (add)="closePopAdding($event)"
+  *ngIf="add"
+></product-root>
+
+<settings-root
+  [@toggle-pop]
+  *ngIf="settings"
+  [id]="productId"
+  (close)="closePopSettings($event)"
+  (edit)="openEdit($event)"
+></settings-root>
+
+<edit-product-root
+  [@toggle-pop]
+  *ngIf="edit"
+  [id]="productId"
+  (close)="closePopEdit($event)"
+></edit-product-root>
