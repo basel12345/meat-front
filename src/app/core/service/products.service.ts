@@ -63,7 +63,6 @@ export class ProductsService {
 
   // adding product
   addProduct(Product) {
-    console.log(this.user._id);
     return this.http.post(
       `${env.url}/products/addProduct/${this.user._id}`,
       Product

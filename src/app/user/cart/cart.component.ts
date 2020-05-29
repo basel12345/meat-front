@@ -21,7 +21,9 @@ export class CartComponent implements OnInit {
     this.route.data.subscribe((res) => {
       this.Cart = res.Cart["cart"];
     });
-    this.calculate();
+    if (this.Cart["length"] > 0) {
+      this.calculate();
+    }
   }
 
   calculate() {

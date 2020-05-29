@@ -19,10 +19,3 @@ export function validatePassword(
     return null;
   };
 }
-
-// export function validatePassword(
-//   formGroup: FormGroup
-// ): { [key: string]: boolean } | null {
-//   console.log(formGroup);
-//   return null;
-// }

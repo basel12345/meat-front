@@ -45,7 +45,6 @@ export class RegisterUserComponent implements OnInit {
     this.service
       .registerUser(this.registerUserForm.getRawValue())
       .subscribe((res) => {
-        console.log(res);
         if (res["status"] === true) {
           this.token = res["token"];
           this.user = res["user"];

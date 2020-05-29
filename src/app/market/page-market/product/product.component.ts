@@ -91,7 +91,6 @@ export class ProductComponent implements OnInit {
       formData.append("description", this.productForm.get("description").value);
     }
     this.sevice.addProduct(formData).subscribe((res) => {
-      console.log(res);
       if (res["status"] == true) {
         this.add.emit(false);
       }
